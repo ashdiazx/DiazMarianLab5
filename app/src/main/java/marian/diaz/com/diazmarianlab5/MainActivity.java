@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent i = new Intent(this, MyService.class);
+        startService(i);
     }
 
     @Override
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = null, chooser=null;
         if (v.getId()== R.id.mapbtn) {
             i=new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("geo:14.610400,120.991916"));
+            i.setData(Uri.parse("geo:14.6004321,120.9969122"));
             chooser= Intent.createChooser(i, "Select your Map App");
             startActivity(chooser);
         }
